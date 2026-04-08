@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETEC 2026 | Design System</title>
+
+    <!-- SEO & Meta Tags -->
+    <meta name="description"
+        content="Design System GETEC 2026 - Biblioteca viva de padrões, tipografia, cores, componentes, animações e ícones extraídos da página oficial do evento.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Atkinson Hyperlegible', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669', // Primary
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b', // Text
+                            950: '#022c22',
+                        },
+                        act: '#0891b2', // CTA blue
+                    },
+                    animation: {
+                        'spin-slow': 'spin 15s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ODS Colors Bar */
+        .ods-bar {
+            display: flex;
+            height: 12px;
+            width: 100%;
+        }
+
+        .ods-color {
+            flex: 1;
+        }
+
+        .ods-1 {
+            background-color: #E5243B;
+        }
+
+        .ods-2 {
+            background-color: #DDA63A;
+        }
+
+        .ods-3 {
+            background-color: #4C9F38;
+        }
+
+        .ods-4 {
+            background-color: #C5192D;
+        }
+
+        .ods-5 {
+            background-color: #FF3A21;
+        }
+
+        .ods-6 {
+            background-color: #26BDE2;
+        }
+
+        .ods-7 {
+            background-color: #FCC30B;
+        }
+
+        .ods-8 {
+            background-color: #A21942;
+        }
+
+        .ods-9 {
+            background-color: #FD6925;
+        }
+
+        .ods-10 {
+            background-color: #DD1367;
+        }
+
+        .ods-11 {
+            background-color: #FD9D24;
+        }
+
+        .ods-12 {
+            background-color: #BF8B2E;
+        }
+
+        .ods-13 {
+            background-color: #3F7E44;
+        }
+
+        .ods-14 {
+            background-color: #0A97D9;
+        }
+
+        .ods-15 {
+            background-color: #56C02B;
+        }
+
+        .ods-16 {
+            background-color: #00689D;
+        }
+
+        .ods-17 {
+            background-color: #19486A;
+        }
+
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bg-pattern {
+            background-color: #ecfdf5;
+            background-image: radial-gradient(#34d399 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Infinte Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+        }
+
+        .pause-marquee:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-brand-900 bg-slate-50 antialiased selection:bg-brand-300 selection:text-brand-900">
+
+
+
+    <!-- Top ODS Decorator Base -->
+    <div class="ods-bar">
+        <div class="ods-color ods-1"></div>
+        <div class="ods-color ods-2"></div>
+        <div class="ods-color ods-3"></div>
+        <div class="ods-color ods-4"></div>
+        <div class="ods-color ods-5"></div>
+        <div class="ods-color ods-6"></div>
+        <div class="ods-color ods-7"></div>
+        <div class="ods-color ods-8"></div>
+        <div class="ods-color ods-9"></div>
+        <div class="ods-color ods-10"></div>
+        <div class="ods-color ods-11"></div>
+        <div class="ods-color ods-12"></div>
+        <div class="ods-color ods-13"></div>
+        <div class="ods-color ods-14"></div>
+        <div class="ods-color ods-15"></div>
+        <div class="ods-color ods-16"></div>
+        <div class="ods-color ods-17"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo_header.webp" alt="GETEC IFTO 2026 Design System"
+                        class="h-10 md:h-12 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105 duration-300">
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#typography"
+                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Tipografia</a>
+                    <a href="#colors"
+                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Cores</a>
+                    <a href="#components"
+                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Componentes</a>
+                    <a href="#layout"
+                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Layout</a>
+                    <a href="#motion"
+                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Motion</a>
+                    <a href="#icons"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-md font-bold transition-colors duration-200 shadow-md flex items-center gap-2">
+                        <span>Ícones</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-brand-900 hover:text-brand-600 transition-colors" id="mobile-menu-btn"
+                        aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#typography"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Tipografia</a>
+                <a href="#colors"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Cores</a>
+                <a href="#components"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Componentes</a>
+                <a href="#layout"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Layout</a>
+                <a href="#motion"
+                    class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Motion</a>
+                <a href="#icons"
+                    class="block mt-4 text-center bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-md font-bold transition-colors">Ícones
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (EXACT CLONE — text adapted to Design System) -->
+    <section class="relative bg-pattern min-h-[90vh] flex items-center overflow-hidden border-b border-brand-200">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/90 to-white/60 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 lg:py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center lg:items-start">
+                <!-- Text Content -->
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100/80 border border-brand-200 text-brand-700 font-medium text-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-500"></span>
+                        Design System • GETEC 2026 • Pattern Library
+                    </div>
+
+                    <h1 class="font-serif text-5xl lg:text-7xl font-bold leading-tight text-brand-950">
+                        Design <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-act">System</span><br>
+                        <span class="text-3xl lg:text-4xl text-brand-800"> Padrões visuais,
+                            componentes e tokens vivos</span>
+                    </h1>
+
+                    <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
+                        Uma biblioteca viva de tipografia, cores, superfícies, componentes, animações e ícones
+                        extraídos diretamente da página oficial do GETEC 2026.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4 border-t border-brand-200">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-brand-100 p-3 rounded-xl text-brand-600">
+                                <i data-lucide="palette" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Tokens</p>
+                                <p class="font-bold text-brand-900">Cores, Tipo & Motion</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-brand-100 p-3 rounded-xl text-brand-600">
+                                <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Biblioteca</p>
+                                <p class="font-bold text-brand-900">Pattern Library</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#components"
+                            class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-bold transition-colors duration-200 text-center flex items-center justify-center gap-2 shadow-lg shadow-brand-600/20 group">
+                            <span>Ver Componentes</span>
+                            <i data-lucide="arrow-right"
+                                class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#typography"
+                            class="bg-white hover:bg-brand-50 border-2 border-brand-200 text-brand-700 px-8 py-4 rounded-lg font-bold transition-colors duration-200 text-center flex items-center justify-center gap-2 group">
+                            <i data-lucide="list" class="w-5 h-5"></i>
+                            <span>Explorar Tipografia</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Element: ODS Circle -->
+                <div class="relative flex justify-center items-center lg:justify-end lg:mt-12 xl:mt-16">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                        <!-- Background glow -->
+                        <div class="absolute inset-0 bg-brand-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+
+                        <!-- Content Box -->
+                        <div
+                            class="absolute inset-4 bg-white rounded-full shadow-2xl border-4 border-white z-10 flex flex-col items-center justify-center p-8 text-center glass-card hover:scale-105 transition-transform duration-500">
+                            <i data-lucide="recycle"
+                                class="hidden sm:block sm:w-16 sm:h-16 text-brand-500 mb-4 animate-spin-slow transition-all duration-300"></i>
+                            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-2">Pattern Library:</h3>
+                            <p class="text-sm text-slate-500">Tokens e componentes reutilizáveis para construir
+                                experiências consistentes e acessíveis</p>
+                        </div>
+
+                        <!-- ODS Dots Ring (Simulated with absolute positioning) -->
+                        <div class="absolute inset-0 z-20 animate-spin-slow" style="animation-duration: 40s;">
+                            <div
+                                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-13 border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-12 border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-9 border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-7 border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute top-1/4 left-4 w-6 h-6 rounded-full shadow-lg ods-1 border-2 border-white">
+                            </div>
+                            <div
+                                class="absolute bottom-1/4 right-4 w-6 h-6 rounded-full shadow-lg ods-14 border-2 border-white">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 1) TYPOGRAPHY                                                 -->
+    <!-- ============================================================ -->
+    <section id="typography" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">01 — Foundations</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Tipografia</h2>
+                <p class="text-lg text-slate-600">
+                    Cabeçalhos usam <strong>Crimson Pro</strong> (<code class="font-sans">font-serif</code>) e o texto
+                    corrido usa <strong>Atkinson Hyperlegible</strong> (<code class="font-sans">font-sans</code>).
+                    Escala e ritmo conforme o uso real da página.
+                </p>
+            </div>
+
+            <div class="divide-y divide-brand-100 border-y border-brand-100">
+
+                <!-- Heading 1 (Hero H1) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Heading 1</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Hero · font-serif</p>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-5xl lg:text-7xl font-bold leading-tight text-brand-950">
+                            Economia <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-act">Circular</span>
+                        </h1>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">72px / 1.1</span>
+                    </div>
+                </div>
+
+                <!-- Heading 2 (Section H2) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Heading 2</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Section · font-serif</p>
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900">
+                            Integração Industrial Sustentável
+                        </h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">48px / 1.1</span>
+                    </div>
+                </div>
+
+                <!-- Heading 3 (Card title large) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Heading 3</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Card · font-serif</p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-2xl text-brand-900">
+                            Pattern Library
+                        </h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">24px / 1.25</span>
+                    </div>
+                </div>
+
+                <!-- Heading 4 (Subtitle) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Heading 4</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Timeline · font-serif</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-semibold text-lg text-brand-800">
+                            Palestra: Economia verde e otimização de processos
+                        </h4>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">18px / 1.4</span>
+                    </div>
+                </div>
+
+                <!-- Bold L (Card Title sans) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Bold L</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Card sans · font-sans</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-0">Estudantes do IFTO</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">20px / 1.4</span>
+                    </div>
+                </div>
+
+                <!-- Bold M (Day title) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Bold M</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Day · font-sans</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-brand-900">27 de Maio</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">20px / 1.4</span>
+                    </div>
+                </div>
+
+                <!-- Bold S (Labels) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Bold S</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Eyebrow · font-sans</p>
+                    </div>
+                    <div>
+                        <span class="text-brand-600 font-bold tracking-wider uppercase text-sm block">O Propósito</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">14px / 1.25</span>
+                    </div>
+                </div>
+
+                <!-- Paragraph (Lead) -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Paragraph</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Hero lead · font-sans</p>
+                    </div>
+                    <div>
+                        <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
+                            Junte-se a nós na GETEC 2026 para explorar soluções inovadoras que alinham gestão industrial,
+                            otimização de recursos e um compromisso real com as ODS.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">20px / 1.625</span>
+                    </div>
+                </div>
+
+                <!-- Regular L -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Regular L</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Body large · font-sans</p>
+                    </div>
+                    <div>
+                        <p class="text-lg text-slate-600">
+                            Prepare-se para dias intensos de aprendizado, troca de vivências e networking focados no
+                            futuro sustentável.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">18px / 1.625</span>
+                    </div>
+                </div>
+
+                <!-- Regular M -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Regular M</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Body base · font-sans</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-600 leading-relaxed">
+                            O principal objetivo é eliminar desperdícios, circular materiais e regenerar os sistemas
+                            naturais, promovendo ao mesmo tempo benefícios econômicos, sociais e ambientais.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">16px / 1.625</span>
+                    </div>
+                </div>
+
+                <!-- Regular S -->
+                <div class="py-8 grid md:grid-cols-[180px_1fr_140px] gap-6 items-center">
+                    <div>
+                        <p class="font-bold text-brand-900 text-sm uppercase tracking-wider">Regular S</p>
+                        <p class="text-xs text-slate-500 mt-1 font-sans">Small · font-sans</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-600 text-sm">
+                            Discussão aprofundada sobre como implementar métricas sustentáveis com foco prático no
+                            chão de fábrica.
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm text-slate-500 font-mono">14px / 1.5</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 2) COLORS & SURFACES                                          -->
+    <!-- ============================================================ -->
+    <section id="colors" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">02 — Foundations</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Cores &amp; Superfícies</h2>
+                <p class="text-lg text-slate-600">
+                    Paleta <code class="font-sans">brand</code> (verde 50→950), cor de ação <code class="font-sans">act</code>
+                    (#0891b2) e as 17 cores oficiais dos ODS. Superfícies de vidro, padrões e gradientes reais do site.
+                </p>
+            </div>
+
+            <!-- Brand Scale -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Escala Brand</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-3 mb-12">
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-50"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">50</p><p class="text-xs text-slate-500 font-mono">#ecfdf5</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-100"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">100</p><p class="text-xs text-slate-500 font-mono">#d1fae5</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-200"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">200</p><p class="text-xs text-slate-500 font-mono">#a7f3d0</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-300"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">300</p><p class="text-xs text-slate-500 font-mono">#6ee7b7</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-400"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">400</p><p class="text-xs text-slate-500 font-mono">#34d399</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-500"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">500</p><p class="text-xs text-slate-500 font-mono">#10b981</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm ring-2 ring-brand-600">
+                    <div class="h-16 bg-brand-600"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">600 · Primary</p><p class="text-xs text-slate-500 font-mono">#059669</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-700"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">700</p><p class="text-xs text-slate-500 font-mono">#047857</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-800"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">800</p><p class="text-xs text-slate-500 font-mono">#065f46</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm ring-2 ring-brand-900">
+                    <div class="h-16 bg-brand-900"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">900 · Text</p><p class="text-xs text-slate-500 font-mono">#064e3b</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-16 bg-brand-950"></div>
+                    <div class="p-3"><p class="font-bold text-brand-900 text-sm">950</p><p class="text-xs text-slate-500 font-mono">#022c22</p></div>
+                </div>
+            </div>
+
+            <!-- Act + Accent -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Accent &amp; Suporte</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-20 bg-act"></div>
+                    <div class="p-4"><p class="font-bold text-brand-900">act · CTA</p><p class="text-xs text-slate-500 font-mono">#0891b2</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-20" style="background-color:#067c9c"></div>
+                    <div class="p-4"><p class="font-bold text-brand-900">act · Hover</p><p class="text-xs text-slate-500 font-mono">#067c9c</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-20 bg-amber-600"></div>
+                    <div class="p-4"><p class="font-bold text-brand-900">amber-600</p><p class="text-xs text-slate-500 font-mono">Coffee icons</p></div>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-brand-100 bg-white shadow-sm">
+                    <div class="h-20 bg-slate-600"></div>
+                    <div class="p-4"><p class="font-bold text-brand-900">slate-600</p><p class="text-xs text-slate-500 font-mono">Body copy</p></div>
+                </div>
+            </div>
+
+            <!-- Surfaces -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Superfícies</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div>
+                    <div class="h-32 rounded-2xl bg-slate-50 border border-brand-100 flex items-center justify-center">
+                        <span class="text-slate-500 text-sm font-medium">bg-slate-50</span>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Page</p>
+                    <p class="text-xs text-slate-500">Fundo da página (body)</p>
+                </div>
+                <div>
+                    <div class="h-32 rounded-2xl bg-white border border-brand-100 flex items-center justify-center shadow-sm">
+                        <span class="text-slate-500 text-sm font-medium">bg-white</span>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Section / Card</p>
+                    <p class="text-xs text-slate-500">Branco puro · seções &amp; cards</p>
+                </div>
+                <div>
+                    <div class="h-32 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center">
+                        <span class="text-brand-700 text-sm font-medium">bg-brand-50</span>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Card Destaque</p>
+                    <p class="text-xs text-slate-500">Cards de features</p>
+                </div>
+                <div>
+                    <div class="h-32 rounded-2xl bg-brand-900 border border-brand-800 flex items-center justify-center">
+                        <span class="text-brand-100 text-sm font-medium">bg-brand-900</span>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Dark Section</p>
+                    <p class="text-xs text-slate-500">Target audience · footer</p>
+                </div>
+            </div>
+
+            <!-- Glass + Pattern -->
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div>
+                    <div class="relative h-40 rounded-2xl overflow-hidden bg-pattern border border-brand-200 p-6">
+                        <div class="glass-card rounded-xl p-4 h-full flex items-center justify-center">
+                            <p class="font-bold text-brand-900">.glass-card sobre .bg-pattern</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Glass + Pattern</p>
+                    <p class="text-xs text-slate-500"><code class="font-sans">backdrop-filter: blur(16px)</code> · fundo pontilhado brand-50 + brand-400</p>
+                </div>
+                <div>
+                    <div class="relative h-40 rounded-2xl overflow-hidden border border-brand-200">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/90 to-white/60"></div>
+                        <div class="absolute inset-0 bg-pattern opacity-50"></div>
+                        <div class="relative h-full flex items-center justify-center">
+                            <p class="font-bold text-brand-900">Hero overlay</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Hero Overlay</p>
+                    <p class="text-xs text-slate-500"><code class="font-sans">bg-gradient-to-br from-brand-50/90 to-white/60</code></p>
+                </div>
+            </div>
+
+            <!-- Gradients -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Gradientes</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div>
+                    <div class="h-24 rounded-2xl bg-gradient-to-r from-brand-600 to-act"></div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Heading Gradient Text</p>
+                    <p class="text-xs text-slate-500 font-mono">from-brand-600 → to-act</p>
+                </div>
+                <div>
+                    <div class="h-24 rounded-2xl bg-gradient-to-b from-transparent via-brand-300 to-transparent"></div>
+                    <p class="font-bold text-brand-900 mt-3 text-sm">Timeline Rail</p>
+                    <p class="text-xs text-slate-500 font-mono">from-transparent via-brand-300 to-transparent</p>
+                </div>
+            </div>
+
+            <!-- ODS palette -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Paleta ODS (17)</h3>
+            <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3">
+                <div class="text-center"><div class="h-16 rounded-lg ods-1 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 1</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-2 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 2</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-3 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 3</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-4 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 4</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-5 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 5</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-6 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 6</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-7 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 7</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-8 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 8</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-9 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 9</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-10 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 10</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-11 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 11</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-12 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 12</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-13 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 13</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-14 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 14</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-15 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 15</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-16 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 16</p></div>
+                <div class="text-center"><div class="h-16 rounded-lg ods-17 border-2 border-white shadow-md"></div><p class="text-xs font-bold text-brand-900 mt-2">ODS 17</p></div>
+            </div>
+
+            <!-- ODS Bar usage -->
+            <div class="mt-8">
+                <p class="font-bold text-brand-900 mb-3 text-sm">Uso: <code class="font-sans">.ods-bar</code> decorativa</p>
+                <div class="ods-bar rounded-lg overflow-hidden">
+                    <div class="ods-color ods-1"></div>
+                    <div class="ods-color ods-2"></div>
+                    <div class="ods-color ods-3"></div>
+                    <div class="ods-color ods-4"></div>
+                    <div class="ods-color ods-5"></div>
+                    <div class="ods-color ods-6"></div>
+                    <div class="ods-color ods-7"></div>
+                    <div class="ods-color ods-8"></div>
+                    <div class="ods-color ods-9"></div>
+                    <div class="ods-color ods-10"></div>
+                    <div class="ods-color ods-11"></div>
+                    <div class="ods-color ods-12"></div>
+                    <div class="ods-color ods-13"></div>
+                    <div class="ods-color ods-14"></div>
+                    <div class="ods-color ods-15"></div>
+                    <div class="ods-color ods-16"></div>
+                    <div class="ods-color ods-17"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 3) UI COMPONENTS                                              -->
+    <!-- ============================================================ -->
+    <section id="components" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">03 — Components</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Componentes UI</h2>
+                <p class="text-lg text-slate-600">
+                    Componentes reais extraídos do site: botões, badges, pills, cards, links de navegação, itens de
+                    timeline, bloco de contato e card do rodapé.
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Botões</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Primary Brand -->
+                <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Primary · Brand</p>
+                    <a href="#"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-bold transition-colors duration-200 text-center flex items-center justify-center gap-2 shadow-lg shadow-brand-600/20 group">
+                        <span>Garantir Vaga</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <p class="text-xs text-slate-500 mt-3 font-mono">bg-brand-600 · hover:bg-brand-700</p>
+                </div>
+
+                <!-- Secondary Outline -->
+                <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Secondary · Outline</p>
+                    <a href="#"
+                        class="bg-white hover:bg-brand-50 border-2 border-brand-200 text-brand-700 px-8 py-4 rounded-lg font-bold transition-colors duration-200 text-center flex items-center justify-center gap-2 group">
+                        <i data-lucide="list" class="w-5 h-5"></i>
+                        <span>Ver Programação</span>
+                    </a>
+                    <p class="text-xs text-slate-500 mt-3 font-mono">border-2 border-brand-200</p>
+                </div>
+
+                <!-- Nav Primary -->
+                <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Nav · Inscrições</p>
+                    <a href="#"
+                        class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-md font-bold transition-colors duration-200 shadow-md inline-flex items-center gap-2">
+                        <span>Inscrições</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <p class="text-xs text-slate-500 mt-3 font-mono">px-6 py-2.5 · rounded-md</p>
+                </div>
+
+                <!-- Act CTA -->
+                <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">CTA · Act (Cyan)</p>
+                    <a href="#"
+                        class="w-full bg-act hover:bg-[#067c9c] text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3">
+                        <span>INSCRIÇÕES</span>
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                    <p class="text-xs text-slate-500 mt-3 font-mono">hover:-translate-y-1 · shadow-xl</p>
+                </div>
+
+                <!-- Social Dark -->
+                <div class="bg-brand-950 rounded-2xl p-6 border border-brand-800">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-300 mb-4">Footer · Social</p>
+                    <a href="#"
+                        class="inline-flex justify-center items-center gap-3 w-full px-5 py-3 rounded-xl bg-brand-900/80 hover:bg-brand-600 border border-brand-700 hover:border-brand-400 transition-all duration-300 group shadow-sm"
+                        aria-label="Siga-nos no Instagram">
+                        <svg class="w-5 h-5 text-white transition-transform duration-300 group-hover:scale-110"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span class="text-sm font-bold text-white tracking-wide">Siga @gpi.oficial.ifto</span>
+                    </a>
+                    <p class="text-xs text-brand-300/70 mt-3 font-mono">bg-brand-900/80 · border-brand-700</p>
+                </div>
+
+                <!-- Icon-only Nav -->
+                <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Icon-only · Menu</p>
+                    <button class="text-brand-900 hover:text-brand-600 transition-colors" aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                    <p class="text-xs text-slate-500 mt-3 font-mono">text-brand-900 · hover:text-brand-600</p>
+                </div>
+            </div>
+
+            <!-- Badges & Pills -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Badges &amp; Pills</h3>
+            <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 mb-12">
+                <div class="flex flex-wrap items-center gap-4">
+                    <!-- Hero pill -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100/80 border border-brand-200 text-brand-700 font-medium text-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-500"></span>
+                        Hero Pill · Live Dot
+                    </div>
+
+                    <!-- Status badge brand -->
+                    <span class="inline-flex items-center rounded-md bg-brand-50 px-2 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/20">
+                        Abertura
+                    </span>
+
+                    <!-- Status badge act -->
+                    <span class="inline-flex items-center rounded-md bg-act/10 px-2 py-1 text-xs font-semibold text-act ring-1 ring-act/20">
+                        Pesquisa
+                    </span>
+
+                    <!-- Status badge brand (esquenta) -->
+                    <span class="inline-flex items-center rounded-md bg-brand-50 px-2 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/20">
+                        Esquenta
+                    </span>
+
+                    <!-- Eyebrow -->
+                    <span class="text-brand-600 font-bold tracking-wider uppercase text-sm">Eyebrow Label</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-6 font-mono">rounded-full (pill) · rounded-md (status) · ring-1 ring-brand-600/20</p>
+            </div>
+
+            <!-- Nav Links States -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Links de Navegação</h3>
+            <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 mb-12">
+                <div class="flex flex-wrap gap-8 items-center">
+                    <a href="#" class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Default</a>
+                    <a href="#" class="text-brand-600 font-medium transition-colors duration-200">Hover (simulado)</a>
+                    <a href="#" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Mobile Item</a>
+                    <a href="#" class="hover:text-white transition-colors flex items-center gap-2 text-brand-100/80">
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i> Footer Link
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Cards</h3>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Feature Card (Economia Circular style) -->
+                <div class="cursor-pointer group hover:-translate-y-2 transition-transform duration-300 h-full">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-brand-900 mb-3">Feature Card</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Card com ícone em box branco, título serif, descrição. Eleva no hover
+                            (<code class="font-sans">hover:-translate-y-2</code>) e o ícone escala.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Card with Decoration -->
+                <div class="cursor-pointer group hover:-translate-y-2 transition-transform duration-300 h-full">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 h-full flex flex-col relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-200/50 rounded-bl-full -mr-8 -mt-8 z-0"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="target" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-3">Decorated Card</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Variante com decoração circular no canto superior direito
+                                (<code class="font-sans">rounded-bl-full</code>).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dark Audience Card -->
+                <div class="bg-brand-900 rounded-2xl p-0 overflow-hidden">
+                    <div class="bg-brand-800/80 backdrop-blur border border-brand-700 p-6 rounded-xl hover:bg-brand-800 transition-colors cursor-pointer group m-0 h-full">
+                        <i data-lucide="graduation-cap" class="text-brand-300 w-10 h-10 mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                        <h3 class="font-bold text-xl mb-2 text-white">Dark Audience Card</h3>
+                        <p class="text-brand-100/80 text-sm">Para seções em <code class="font-sans">bg-brand-900</code>.
+                            Ícone sobe no hover.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info Card -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Card de Contato</h3>
+            <div class="bg-brand-50 p-8 md:p-12 rounded-2xl border border-brand-100 mb-12 max-w-2xl">
+                <h3 class="font-serif text-3xl font-bold text-brand-900 mb-8">Informações de Contato</h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-600 shrink-0 shadow-sm">
+                            <i data-lucide="help-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-900 text-lg mb-1">Coordenação do Evento</h4>
+                            <p class="text-slate-600 mb-2">Estrutura padrão de item de contato com ícone circular em
+                                círculo branco.</p>
+                            <p class="font-medium text-brand-800">Nome do Responsável</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-center pl-16">
+                        <i data-lucide="mail" class="w-5 h-5 text-brand-500"></i>
+                        <a href="#" class="text-brand-600 hover:text-brand-800 font-medium transition-colors">email@exemplo.com</a>
+                    </div>
+                    <div class="flex gap-4 items-center pl-16 pt-4 border-t border-brand-200">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-500"></i>
+                        <span class="text-slate-600">Endereço completo aqui</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Timeline Item</h3>
+            <div class="max-w-3xl mb-12">
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-brand-300 before:to-transparent">
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-brand-600 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-110">
+                            <i data-lucide="sun" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-brand-100 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-brand-300">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-brand-900">Data</h3>
+                                <span class="inline-flex items-center rounded-md bg-brand-50 px-2 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/20">Abertura</span>
+                            </div>
+                            <h4 class="font-serif font-semibold text-lg text-brand-800 mb-2">Título do Evento</h4>
+                            <p class="text-slate-600 text-sm">Descrição do item de timeline com linha vertical
+                                gradiente e marcador circular.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inline Callout (Ticket) -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Callout com Decoração</h3>
+            <div class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm relative overflow-hidden group mt-4 max-w-xl mb-12">
+                <div class="absolute -right-6 -top-6 w-24 h-24 bg-brand-50 rounded-full group-hover:bg-brand-100 transition-colors duration-500 z-0"></div>
+                <div class="relative z-10 flex flex-col space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shrink-0">
+                            <i data-lucide="ticket" class="w-6 h-6"></i>
+                        </div>
+                        <p class="text-brand-900 font-medium leading-tight">
+                            Callout com círculo decorativo no canto que muda de cor no hover do card.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4) LAYOUT & SPACING                                           -->
+    <!-- ============================================================ -->
+    <section id="layout" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">04 — Structure</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Layout &amp; Espaçamento</h2>
+                <p class="text-lg text-slate-600">
+                    Contêineres, grids e padrões reais do site: container principal, grid split do hero e grid de 3
+                    colunas de features.
+                </p>
+            </div>
+
+            <!-- Container tokens -->
+            <div class="bg-white rounded-2xl p-8 border border-brand-100 mb-8">
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Container Principal</p>
+                <div class="border-2 border-dashed border-brand-300 rounded-lg p-4">
+                    <code class="text-sm text-brand-900 font-sans">max-w-7xl mx-auto px-4 sm:px-6 lg:px-8</code>
+                </div>
+                <p class="text-xs text-slate-500 mt-3">Largura máxima 80rem · padding responsivo horizontal · centralizado.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-brand-100 mb-8">
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Seção Padrão</p>
+                <div class="border-2 border-dashed border-brand-300 rounded-lg p-4">
+                    <code class="text-sm text-brand-900 font-sans">py-20</code>
+                </div>
+                <p class="text-xs text-slate-500 mt-3">Padding vertical de seção: 5rem (80px) em cima e embaixo.</p>
+            </div>
+
+            <!-- Hero split layout -->
+            <div class="bg-white rounded-2xl p-8 border border-brand-100 mb-8">
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Split Layout · Hero</p>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-brand-50 border-2 border-dashed border-brand-300 rounded-lg p-6 text-center">
+                        <i data-lucide="type" class="w-8 h-8 text-brand-600 mx-auto mb-2"></i>
+                        <p class="font-bold text-brand-900">Coluna de Texto</p>
+                        <p class="text-xs text-slate-500 mt-1">space-y-8</p>
+                    </div>
+                    <div class="bg-brand-50 border-2 border-dashed border-brand-300 rounded-lg p-6 text-center">
+                        <i data-lucide="image" class="w-8 h-8 text-brand-600 mx-auto mb-2"></i>
+                        <p class="font-bold text-brand-900">Coluna Visual</p>
+                        <p class="text-xs text-slate-500 mt-1">flex justify-end</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 font-mono">grid lg:grid-cols-2 gap-12 items-center</p>
+            </div>
+
+            <!-- 3-col feature grid -->
+            <div class="bg-white rounded-2xl p-8 border border-brand-100 mb-8">
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">3 Colunas · Features</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-brand-50 border-2 border-dashed border-brand-300 rounded-lg p-6 text-center">
+                        <p class="font-bold text-brand-900">Col 1</p>
+                    </div>
+                    <div class="bg-brand-50 border-2 border-dashed border-brand-300 rounded-lg p-6 text-center">
+                        <p class="font-bold text-brand-900">Col 2</p>
+                    </div>
+                    <div class="bg-brand-50 border-2 border-dashed border-brand-300 rounded-lg p-6 text-center">
+                        <p class="font-bold text-brand-900">Col 3</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 font-mono">grid md:grid-cols-3 gap-8</p>
+            </div>
+
+            <!-- Radii -->
+            <div class="bg-white rounded-2xl p-8 border border-brand-100">
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-4">Border Radius</p>
+                <div class="flex flex-wrap gap-6">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-100 rounded-md border border-brand-200"></div>
+                        <p class="text-xs font-bold text-brand-900 mt-2">rounded-md</p>
+                        <p class="text-xs text-slate-500">buttons nav</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-100 rounded-lg border border-brand-200"></div>
+                        <p class="text-xs font-bold text-brand-900 mt-2">rounded-lg</p>
+                        <p class="text-xs text-slate-500">buttons hero</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-100 rounded-xl border border-brand-200"></div>
+                        <p class="text-xs font-bold text-brand-900 mt-2">rounded-xl</p>
+                        <p class="text-xs text-slate-500">icon boxes</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-100 rounded-2xl border border-brand-200"></div>
+                        <p class="text-xs font-bold text-brand-900 mt-2">rounded-2xl</p>
+                        <p class="text-xs text-slate-500">cards</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-brand-100 rounded-full border border-brand-200"></div>
+                        <p class="text-xs font-bold text-brand-900 mt-2">rounded-full</p>
+                        <p class="text-xs text-slate-500">pills · avatars</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5) MOTION & INTERACTION                                       -->
+    <!-- ============================================================ -->
+    <section id="motion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">05 — Motion</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Motion &amp; Interação</h2>
+                <p class="text-lg text-slate-600">
+                    Todas as animações e transições reais usadas na página. Passe o mouse nos exemplos para observar
+                    comportamento.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- animate-spin-slow -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 text-center">
+                    <i data-lucide="recycle" class="w-16 h-16 text-brand-500 mx-auto mb-4 animate-spin-slow"></i>
+                    <p class="font-bold text-brand-900">animate-spin-slow</p>
+                    <p class="text-xs text-slate-500 font-mono mt-2">spin 15s linear infinite</p>
+                </div>
+
+                <!-- animate-pulse -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 text-center">
+                    <div class="relative w-16 h-16 mx-auto mb-4">
+                        <div class="absolute inset-0 bg-brand-300 rounded-full blur-2xl opacity-60 animate-pulse"></div>
+                        <div class="absolute inset-0 bg-brand-500 rounded-full"></div>
+                    </div>
+                    <p class="font-bold text-brand-900">animate-pulse</p>
+                    <p class="text-xs text-slate-500 font-mono mt-2">blur glow · hero</p>
+                </div>
+
+                <!-- hover:-translate-y-2 -->
+                <div class="cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 text-center h-full">
+                        <i data-lucide="move-up" class="w-10 h-10 text-brand-600 mx-auto mb-4"></i>
+                        <p class="font-bold text-brand-900">hover:-translate-y-2</p>
+                        <p class="text-xs text-slate-500 font-mono mt-2">transition-transform duration-300</p>
+                    </div>
+                </div>
+
+                <!-- hover:scale-105 glass -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100">
+                    <div class="glass-card rounded-xl p-6 text-center hover:scale-105 transition-transform duration-500 cursor-pointer">
+                        <i data-lucide="maximize-2" class="w-10 h-10 text-brand-600 mx-auto mb-4"></i>
+                        <p class="font-bold text-brand-900">hover:scale-105</p>
+                        <p class="text-xs text-slate-500 font-mono mt-2">duration-500</p>
+                    </div>
+                </div>
+
+                <!-- group icon scale -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 cursor-pointer group">
+                    <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="sparkles" class="w-7 h-7"></i>
+                    </div>
+                    <p class="font-bold text-brand-900 text-center">group-hover:scale-110</p>
+                    <p class="text-xs text-slate-500 font-mono mt-2 text-center">icon box no card</p>
+                </div>
+
+                <!-- group-hover translate-x -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100">
+                    <a href="#" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-lg font-bold transition-colors duration-200 text-center flex items-center justify-center gap-2 group">
+                        <span>Hover aqui</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <p class="text-xs text-slate-500 font-mono mt-3 text-center">group-hover:translate-x-1</p>
+                </div>
+
+                <!-- logo hover scale -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 text-center">
+                    <img src="logo_header.webp" alt="Logo"
+                        class="h-12 w-auto object-contain mx-auto drop-shadow-sm transition-transform hover:scale-105 duration-300">
+                    <p class="font-bold text-brand-900 mt-4">hover:scale-105</p>
+                    <p class="text-xs text-slate-500 font-mono mt-2">logo header</p>
+                </div>
+
+                <!-- group-hover -translate-y-1 icon -->
+                <div class="bg-brand-900 rounded-2xl p-8 border border-brand-800 cursor-pointer group">
+                    <i data-lucide="graduation-cap" class="text-brand-300 w-10 h-10 mb-4 group-hover:-translate-y-1 transition-transform mx-auto block"></i>
+                    <p class="font-bold text-white text-center">group-hover:-translate-y-1</p>
+                    <p class="text-xs text-brand-300/70 font-mono mt-2 text-center">dark card icon</p>
+                </div>
+
+                <!-- transition-colors -->
+                <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 text-center">
+                    <a href="#" class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200 text-lg">
+                        Nav link hover
+                    </a>
+                    <p class="font-bold text-brand-900 mt-4">transition-colors</p>
+                    <p class="text-xs text-slate-500 font-mono mt-2">duration-200</p>
+                </div>
+            </div>
+
+            <!-- Marquee demo -->
+            <div class="mt-12">
+                <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Marquee infinita (.animate-marquee)</h3>
+                <div class="relative w-full flex overflow-hidden pause-marquee group py-4 border border-brand-100 rounded-2xl bg-white">
+                    <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+                    <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+                    <div class="flex animate-marquee whitespace-nowrap items-center w-max">
+                        <div class="flex items-center gap-16 px-8 shrink-0">
+                            <span class="text-brand-900 font-serif font-bold text-2xl">Economia Circular</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">ODS</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">Sustentabilidade</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">GETEC 2026</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                        </div>
+                        <div class="flex items-center gap-16 px-8 shrink-0">
+                            <span class="text-brand-900 font-serif font-bold text-2xl">Economia Circular</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">ODS</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">Sustentabilidade</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">GETEC 2026</span>
+                            <span class="text-brand-900 font-serif font-bold text-2xl">•</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 font-mono mt-3">35s linear infinite · pause-marquee:hover pausa a animação</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 6) ICONS                                                       -->
+    <!-- ============================================================ -->
+    <section id="icons" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">06 — Assets</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Ícones</h2>
+                <p class="text-lg text-slate-600">
+                    Sistema <strong>Lucide</strong> via CDN (<code class="font-sans">unpkg.com/lucide@latest</code>).
+                    Inicialização com <code class="font-sans">lucide.createIcons()</code>. Cor herdada via
+                    <code class="font-sans">currentColor</code> do container.
+                </p>
+            </div>
+
+            <!-- Size variants -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Tamanhos</h3>
+            <div class="bg-white rounded-2xl p-8 border border-brand-100 mb-8">
+                <div class="flex flex-wrap items-end gap-8 text-brand-600">
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-4 h-4"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-4 h-4</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-5 h-5"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-5 h-5</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-6 h-6"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-6 h-6</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-7 h-7"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-7 h-7</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-10 h-10"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-10 h-10</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="recycle" class="w-16 h-16"></i>
+                        <p class="text-xs font-mono text-slate-500 mt-2">w-16 h-16</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color inheritance -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Herança de Cor</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white rounded-xl p-6 border border-brand-100 text-center text-brand-600">
+                    <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-2"></i>
+                    <p class="text-xs font-mono text-slate-500">text-brand-600</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-brand-100 text-center text-brand-500">
+                    <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-2"></i>
+                    <p class="text-xs font-mono text-slate-500">text-brand-500</p>
+                </div>
+                <div class="bg-brand-900 rounded-xl p-6 border border-brand-800 text-center text-brand-300">
+                    <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-2"></i>
+                    <p class="text-xs font-mono text-brand-100/70">text-brand-300</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-brand-100 text-center text-act">
+                    <i data-lucide="leaf" class="w-8 h-8 mx-auto mb-2"></i>
+                    <p class="text-xs font-mono text-slate-500">text-act</p>
+                </div>
+            </div>
+
+            <!-- Used icons gallery -->
+            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-6">Ícones Usados na Página</h3>
+            <div class="bg-white rounded-2xl p-8 border border-brand-100">
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 text-brand-600">
+                    <div class="text-center"><i data-lucide="arrow-right" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">arrow-right</p></div>
+                    <div class="text-center"><i data-lucide="menu" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">menu</p></div>
+                    <div class="text-center"><i data-lucide="calendar" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">calendar</p></div>
+                    <div class="text-center"><i data-lucide="map-pin" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">map-pin</p></div>
+                    <div class="text-center"><i data-lucide="list" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">list</p></div>
+                    <div class="text-center"><i data-lucide="recycle" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">recycle</p></div>
+                    <div class="text-center"><i data-lucide="refresh-cw" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">refresh-cw</p></div>
+                    <div class="text-center"><i data-lucide="target" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">target</p></div>
+                    <div class="text-center"><i data-lucide="leaf" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">leaf</p></div>
+                    <div class="text-center"><i data-lucide="graduation-cap" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">graduation-cap</p></div>
+                    <div class="text-center"><i data-lucide="book-open" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">book-open</p></div>
+                    <div class="text-center"><i data-lucide="building-2" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">building-2</p></div>
+                    <div class="text-center"><i data-lucide="flame" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">flame</p></div>
+                    <div class="text-center"><i data-lucide="sun" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">sun</p></div>
+                    <div class="text-center"><i data-lucide="microscope" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">microscope</p></div>
+                    <div class="text-center"><i data-lucide="party-popper" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">party-popper</p></div>
+                    <div class="text-center"><i data-lucide="clock" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">clock</p></div>
+                    <div class="text-center"><i data-lucide="message-square" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">message-square</p></div>
+                    <div class="text-center"><i data-lucide="coffee" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">coffee</p></div>
+                    <div class="text-center"><i data-lucide="check-circle-2" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">check-circle-2</p></div>
+                    <div class="text-center"><i data-lucide="book" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">book</p></div>
+                    <div class="text-center"><i data-lucide="store" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">store</p></div>
+                    <div class="text-center"><i data-lucide="gift" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">gift</p></div>
+                    <div class="text-center"><i data-lucide="ticket" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">ticket</p></div>
+                    <div class="text-center"><i data-lucide="external-link" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">external-link</p></div>
+                    <div class="text-center"><i data-lucide="help-circle" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">help-circle</p></div>
+                    <div class="text-center"><i data-lucide="mail" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">mail</p></div>
+                    <div class="text-center"><i data-lucide="phone" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">phone</p></div>
+                    <div class="text-center"><i data-lucide="chevron-right" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs text-slate-500 font-mono">chevron-right</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-brand-950 text-brand-100 border-t-8 border-brand-600 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-sm">Design System</h4>
+                    <p class="text-brand-100/70 text-sm leading-relaxed">Pattern library extraída do site oficial do
+                        GETEC 2026.</p>
+                </div>
+                <a href="index.html"
+                    class="inline-flex justify-center items-center gap-3 px-5 py-3 rounded-xl bg-brand-900/80 hover:bg-brand-600 border border-brand-700 hover:border-brand-400 transition-all duration-300 group shadow-sm">
+                    <i data-lucide="arrow-left" class="w-5 h-5 text-white"></i>
+                    <span class="text-sm font-bold text-white tracking-wide">Voltar para o site</span>
+                </a>
+            </div>
+            <div class="border-t border-brand-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-100/50">
+                <p>&copy; 2026 GETEC Design System · Curso de Gestão da Produção Industrial - IFTO.</p>
+            </div>
+        </div>
+
+        <!-- Bottom ODS Decorator Base -->
+        <div class="ods-bar opacity-50 absolute bottom-0 left-0 w-full h-2">
+            <div class="ods-color ods-1"></div>
+            <div class="ods-color ods-2"></div>
+            <div class="ods-color ods-3"></div>
+            <div class="ods-color ods-4"></div>
+            <div class="ods-color ods-5"></div>
+            <div class="ods-color ods-6"></div>
+            <div class="ods-color ods-7"></div>
+            <div class="ods-color ods-8"></div>
+            <div class="ods-color ods-9"></div>
+            <div class="ods-color ods-10"></div>
+            <div class="ods-color ods-11"></div>
+            <div class="ods-color ods-12"></div>
+            <div class="ods-color ods-13"></div>
+            <div class="ods-color ods-14"></div>
+            <div class="ods-color ods-15"></div>
+            <div class="ods-color ods-16"></div>
+            <div class="ods-color ods-17"></div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
