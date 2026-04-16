@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETEC 2026 | Evento de Economia Circular e ODS — IFTO Araguaína, 27–29 de Maio</title>
+
+    <!-- SEO & Meta Tags -->
+    <meta name="description"
+        content="GETEC 2026 — Evento gratuito com certificado. 27 a 29 de Maio, IFTO Araguaína. Palestras, mostra de pesquisa, mesa-redonda e lançamento de livro sobre Economia Circular e ODS.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Atkinson Hyperlegible', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        act: '#0891b2',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 15s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts — apenas pesos utilizados (P8: performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ODS Colors Bar — 4px (P5: menos ruído, mantém identidade) */
+        .ods-bar {
+            display: flex;
+            height: 4px;
+            width: 100%;
+        }
+
+        .ods-color { flex: 1; }
+
+        .ods-1  { background-color: #E5243B; }
+        .ods-2  { background-color: #DDA63A; }
+        .ods-3  { background-color: #4C9F38; }
+        .ods-4  { background-color: #C5192D; }
+        .ods-5  { background-color: #FF3A21; }
+        .ods-6  { background-color: #26BDE2; }
+        .ods-7  { background-color: #FCC30B; }
+        .ods-8  { background-color: #A21942; }
+        .ods-9  { background-color: #FD6925; }
+        .ods-10 { background-color: #DD1367; }
+        .ods-11 { background-color: #FD9D24; }
+        .ods-12 { background-color: #BF8B2E; }
+        .ods-13 { background-color: #3F7E44; }
+        .ods-14 { background-color: #0A97D9; }
+        .ods-15 { background-color: #56C02B; }
+        .ods-16 { background-color: #00689D; }
+        .ods-17 { background-color: #19486A; }
+
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bg-pattern {
+            background-color: #ecfdf5;
+            background-image: radial-gradient(#34d399 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Marquee */
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+        }
+
+        .pause-marquee:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Scroll-spy: link ativo no nav (P10 / Sprint 3) */
+        .nav-link[aria-current="page"] {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        /* CTA sticky mobile (P4 + P7) */
+        @media (max-width: 767px) {
+            body { padding-bottom: 76px; }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-brand-900 bg-slate-50 antialiased selection:bg-brand-300 selection:text-brand-900">
+
+    <!-- Top ODS Bar — identidade mantida, altura reduzida (P5) -->
+    <div class="ods-bar">
+        <div class="ods-color ods-1"></div><div class="ods-color ods-2"></div>
+        <div class="ods-color ods-3"></div><div class="ods-color ods-4"></div>
+        <div class="ods-color ods-5"></div><div class="ods-color ods-6"></div>
+        <div class="ods-color ods-7"></div><div class="ods-color ods-8"></div>
+        <div class="ods-color ods-9"></div><div class="ods-color ods-10"></div>
+        <div class="ods-color ods-11"></div><div class="ods-color ods-12"></div>
+        <div class="ods-color ods-13"></div><div class="ods-color ods-14"></div>
+        <div class="ods-color ods-15"></div><div class="ods-color ods-16"></div>
+        <div class="ods-color ods-17"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo_header.webp" alt="GETEC IFTO 2026" fetchpriority="high" width="160" height="48"
+                        class="h-10 md:h-12 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105 duration-300">
+                </div>
+
+                <!-- Desktop nav -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre"      class="nav-link text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Sobre o Evento</a>
+                    <a href="#programacao" class="nav-link text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Programação</a>
+                    <a href="#publico"    class="nav-link text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Público-alvo</a>
+                    <a href="#contato"    class="nav-link text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Contato</a>
+                    <!-- P4: CTA unificado — cor act, copy consistente, target _blank + ícone externo -->
+                    <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+                        class="bg-act hover:bg-cyan-700 text-white px-6 py-2.5 rounded-md font-bold transition-colors duration-200 shadow-md flex items-center gap-2">
+                        <span>Garantir minha vaga</span>
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-brand-900 hover:text-brand-600 transition-colors" id="mobile-menu-btn"
+                        aria-label="Abrir menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#sobre"       class="nav-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Sobre o Evento</a>
+                <a href="#programacao" class="nav-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Programação</a>
+                <a href="#publico"     class="nav-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Público-alvo</a>
+                <a href="#contato"     class="nav-link block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-md">Contato</a>
+                <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+                    class="block mt-4 text-center bg-act hover:bg-cyan-700 text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center justify-center gap-2">
+                    <span>Garantir minha vaga</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =====================================================================
+         HERO — mantém bg-pattern + gradiente + grid 2 col + círculo ODS
+         P1: H1 reescrito para evento+data+local
+         P2: botão secundário rebaixado para link-texto
+         P4: CTA primário usa cor act
+         P6: trust strip logo abaixo do título
+         ===================================================================== -->
+    <section class="relative bg-pattern min-h-[90vh] flex items-center overflow-hidden border-b border-brand-200">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/90 to-white/60 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 lg:py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center lg:items-start">
+
+                <!-- Text Content -->
+                <div class="space-y-8">
+
+                    <!-- Badge institucional -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100/80 border border-brand-200 text-brand-700 font-medium text-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-500"></span>
+                        Evento Acadêmico • IFTO Araguaína • 27–29 de Maio de 2026
+                    </div>
+
+                    <!-- P1: H1 claro — evento + formato + tema -->
+                    <h1 class="font-serif text-5xl lg:text-7xl font-bold leading-tight text-brand-950">
+                        GETEC <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-act">2026</span>
+                    </h1>
+                    <p class="font-serif text-2xl lg:text-3xl font-semibold text-brand-800 -mt-4">
+                        3 dias de imersão em Economia Circular e ODS
+                    </p>
+
+                    <!-- P6: trust strip — gratuidade + certificado + prova social -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-act/10 border border-act/20 text-act text-sm font-bold">
+                            <i data-lucide="badge-check" class="w-4 h-4"></i> Evento gratuito
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-sm font-bold">
+                            <i data-lucide="award" class="w-4 h-4"></i> Certificado incluso
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-sm font-bold">
+                            <i data-lucide="users" class="w-4 h-4"></i> 500+ inscritos
+                        </span>
+                    </div>
+
+                    <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
+                        Palestras, mesa-redonda com empreendedores, I Mostra de Pesquisa em Gestão da Produção e lançamento do livro "Gestão da Produção Industrial em Foco".
+                    </p>
+
+                    <!-- Data + Local — nível de destaque elevado (P1) -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4 border-t border-brand-200">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-act/10 p-3 rounded-xl text-act">
+                                <i data-lucide="calendar" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Data do Evento</p>
+                                <p class="font-bold text-brand-900">27 a 29 de Maio de 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-brand-100 p-3 rounded-xl text-brand-600">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Local</p>
+                                <p class="font-bold text-brand-900">IFTO — Campus Araguaína</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P4: CTA primário act + P2: secundário como link-texto -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                        <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+                            class="w-full sm:w-auto bg-act hover:bg-cyan-700 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 text-center flex items-center justify-center gap-2 shadow-lg shadow-act/25 group">
+                            <span>Garantir minha vaga</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <!-- P2: botão secundário rebaixado — não compete com CTA -->
+                        <a href="#programacao" class="text-brand-700 hover:text-brand-900 font-medium flex items-center gap-1.5 transition-colors duration-200">
+                            Ver Programação <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- P10: microcopy de reassurance -->
+                    <p class="text-xs text-slate-400 flex items-center gap-1.5 -mt-2">
+                        <i data-lucide="info" class="w-3.5 h-3.5 shrink-0"></i>
+                        Você será redirecionado para a plataforma SUAP/IFTO — inscrição em menos de 2 minutos.
+                    </p>
+                </div>
+
+                <!-- Visual: círculo ODS original mantido (P2: opacidade reduzida para não competir) -->
+                <div class="relative flex justify-center items-center lg:justify-end lg:mt-12 xl:mt-16">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 opacity-90">
+                        <div class="absolute inset-0 bg-brand-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+
+                        <div class="absolute inset-4 bg-white rounded-full shadow-2xl border-4 border-white z-10 flex flex-col items-center justify-center p-8 text-center glass-card hover:scale-105 transition-transform duration-500">
+                            <i data-lucide="recycle" class="hidden sm:block sm:w-16 sm:h-16 text-brand-500 mb-4 animate-spin-slow transition-all duration-300"></i>
+                            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-2">Compromisso ODS:</h3>
+                            <p class="text-sm text-slate-500">Transformando a gestão produtiva por meio dos objetivos ambientais, sociais e econômicos</p>
+                        </div>
+
+                        <div class="absolute inset-0 z-20 animate-spin-slow" style="animation-duration: 40s;">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-13 border-2 border-white"></div>
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-12 border-2 border-white"></div>
+                            <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-9 border-2 border-white"></div>
+                            <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full shadow-lg ods-7 border-2 border-white"></div>
+                            <div class="absolute top-1/4 left-4 w-6 h-6 rounded-full shadow-lg ods-1 border-2 border-white"></div>
+                            <div class="absolute bottom-1/4 right-4 w-6 h-6 rounded-full shadow-lg ods-14 border-2 border-white"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         P6: Contador regressivo + stats — amarra prova social antes de
+         qualquer seção de conteúdo
+         ===================================================================== -->
+    <section class="py-10 bg-white border-b border-brand-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="font-bold text-3xl text-act" id="countdown-days">--</p>
+                    <p class="text-slate-500 text-sm mt-1">Dias para o evento</p>
+                </div>
+                <div class="border-l border-brand-100">
+                    <p class="font-bold text-3xl text-brand-600">500+</p>
+                    <p class="text-slate-500 text-sm mt-1">Inscritos</p>
+                </div>
+                <div class="border-l border-brand-100">
+                    <p class="font-bold text-3xl text-brand-600">5ª</p>
+                    <p class="text-slate-500 text-sm mt-1">Edição</p>
+                </div>
+                <div class="border-l border-brand-100">
+                    <p class="font-bold text-3xl text-brand-600">20h</p>
+                    <p class="text-slate-500 text-sm mt-1">Certificação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SOBRE — seção original mantida; cards sem cursor-pointer falso (P3)
+         ===================================================================== -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">O Propósito</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Integração Industrial Sustentável</h2>
+                <p class="text-lg text-slate-600">
+                    O curso superior de Tecnologia em Gestão da Produção Industrial do IFTO forma líderes em processos
+                    fabris. A GETEC 2026 propõe uma reflexão profunda sobre como unir eficiência, logística e
+                    sustentabilidade com os Objetivos de Desenvolvimento Sustentável da ONU.
+                </p>
+            </div>
+
+            <!-- P3: removido cursor-pointer dos cards (não são clicáveis) -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group hover:-translate-y-2 transition-transform duration-300 h-full">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="refresh-cw" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-brand-900 mb-3">Economia Circular</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            O principal objetivo é eliminar desperdícios, circular materiais e regenerar os sistemas
+                            naturais, promovendo benefícios econômicos, sociais e ambientais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group hover:-translate-y-2 transition-transform duration-300 h-full">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 h-full flex flex-col relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-200/50 rounded-bl-full -mr-8 -mt-8 z-0"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
+                                <i data-lucide="target" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-2xl text-brand-900 mb-3">ODS</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Os 17 Objetivos de Desenvolvimento Sustentável da ONU garantem um futuro mais justo,
+                                inclusivo e sustentável para todos, sem deixar ninguém para trás.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group hover:-translate-y-2 transition-transform duration-300 h-full">
+                    <div class="bg-brand-50 rounded-2xl p-8 border border-brand-100 h-full flex flex-col">
+                        <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="leaf" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl text-brand-900 mb-3">Sustentabilidade</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Equilíbrio entre os pilares ambiental, social e econômico — uso consciente e responsável
+                            dos recursos naturais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PÚBLICO — cards sem cursor-pointer falso (P3)
+         ===================================================================== -->
+    <section id="publico" class="py-20 bg-brand-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full border-8 border-brand-800 opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full border-8 border-brand-800 opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mb-12 md:mb-16">
+                <span class="text-brand-300 font-bold tracking-wider uppercase text-sm mb-2 block">Ecossistema</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mb-6">Para quem é a GETEC?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- P3: cursor-pointer removido — cards não navegam para lugar nenhum -->
+                <div class="bg-brand-800/80 backdrop-blur border border-brand-700 p-6 rounded-xl hover:bg-brand-800 transition-colors group">
+                    <i data-lucide="graduation-cap" class="text-brand-300 w-10 h-10 mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                    <h3 class="font-bold text-xl mb-2">Estudantes do IFTO</h3>
+                    <p class="text-brand-100/80 text-sm">Alunos do curso superior em Gestão da Produção Industrial do campus Araguaína.</p>
+                </div>
+                <div class="bg-brand-800/80 backdrop-blur border border-brand-700 p-6 rounded-xl hover:bg-brand-800 transition-colors group">
+                    <i data-lucide="book-open" class="text-brand-300 w-10 h-10 mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                    <h3 class="font-bold text-xl mb-2">Comunidade Acadêmica</h3>
+                    <p class="text-brand-100/80 text-sm">Pesquisadores e docentes fomentando publicações e discussões sobre produção sustentável.</p>
+                </div>
+                <div class="bg-brand-800/80 backdrop-blur border border-brand-700 p-6 rounded-xl hover:bg-brand-800 transition-colors group">
+                    <i data-lucide="building-2" class="text-brand-300 w-10 h-10 mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                    <h3 class="font-bold text-xl mb-2">Empresas Parceiras</h3>
+                    <p class="text-brand-100/80 text-sm">Líderes industriais, profissionais e patrocinadores interessados em impulsionar o ecossistema regional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PROGRAMAÇÃO — timeline original mantida
+         P5: card "Realizado" movido para o fim da lista
+         ===================================================================== -->
+    <section id="programacao" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-brand-900 mb-6">Programação Oficial</h2>
+                <p class="text-lg text-slate-600">Prepare-se para 3 dias intensos de aprendizado, mostra de pesquisa, networking e lançamento de livro.</p>
+            </div>
+
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-brand-300 before:to-transparent">
+
+                <!-- Day 1 — 27 Mai -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-brand-600 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-110">
+                        <i data-lucide="sun" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-brand-100 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-brand-300">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-brand-900">27 de Maio</h3>
+                            <span class="inline-flex items-center rounded-md bg-brand-50 px-2 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/20">Abertura</span>
+                        </div>
+                        <ul class="space-y-4 text-slate-600 text-sm">
+                            <li class="flex gap-3">
+                                <i data-lucide="clock" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                                <span><strong>Uma visão macro aplicável:</strong> Economia Circular e ODS</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="message-square" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                                <span><strong>Mesa Redonda:</strong> Debates dinâmicos com empreendedores de destaque regional.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="coffee" class="w-5 h-5 text-amber-600 shrink-0"></i>
+                                <span><strong>Networking:</strong> Coffee Break & Troca de experiências.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 2 — 28 Mai -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-brand-600 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-110">
+                        <i data-lucide="microscope" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-brand-100 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-brand-300">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-brand-900">28 de Maio</h3>
+                            <span class="inline-flex items-center rounded-md bg-act/10 px-2 py-1 text-xs font-semibold text-act ring-1 ring-act/20">Pesquisa</span>
+                        </div>
+                        <h4 class="font-serif font-semibold text-lg text-brand-800 mb-2">I Mostra de Pesquisa em Gestão da Produção</h4>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500"></i>
+                                <span>Exposição interativa de Banners acadêmicos.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="book" class="w-4 h-4 text-brand-500 mt-0.5 shrink-0"></i>
+                                <div>
+                                    <span class="block font-medium text-brand-900 mb-1">Lançamento do Livro "Gestão da Produção Industrial em Foco":</span>
+                                    <ul class="list-disc list-inside text-slate-500 space-y-1 ml-1">
+                                        <li>Apresentação do livro físico e e-book;</li>
+                                        <li>Momento de interação com os autores.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="coffee" class="w-4 h-4 text-amber-600"></i>
+                                <span>Coffee Break Institucional.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 3 — 29 Mai -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-brand-600 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-110">
+                        <i data-lucide="party-popper" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-brand-100 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-brand-300">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-brand-900">29 de Maio</h3>
+                            <span class="inline-flex items-center rounded-md bg-brand-50 px-2 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/20">Encerramento</span>
+                        </div>
+                        <h4 class="font-serif font-semibold text-lg text-brand-800 mb-2">Mostra GETEC</h4>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="store" class="w-4 h-4 text-brand-500"></i>
+                                <span>Stands de parcerias estratégicas.</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="gift" class="w-4 h-4 text-brand-500"></i>
+                                <span>Sorteios, premiações.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- P5: card "Realizado" no fim — informação passada não bloqueia conteúdo futuro -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none opacity-65">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-50 bg-slate-400 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="check" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-xl text-slate-600 line-through decoration-slate-400">08 de Abril</h3>
+                            <span class="inline-flex items-center rounded-md bg-slate-200 px-2 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-500/20">Realizado</span>
+                        </div>
+                        <h4 class="font-serif font-semibold text-lg text-slate-700 mb-2">Palestra: Economia verde e otimização de processos</h4>
+                        <p class="text-slate-500 text-sm mb-4">Discussão aprofundada sobre como implementar métricas sustentáveis com foco prático no chão de fábrica.</p>
+                        <div class="flex items-center gap-2 mt-4 text-sm font-medium text-slate-600">
+                            <div class="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 shadow-sm shrink-0 opacity-80">
+                                <img src="palestrante_avatar.webp" alt="Prof. Me. Leonardo Maria" loading="lazy" class="w-full h-full object-cover grayscale">
+                            </div>
+                            <span class="font-medium text-slate-600">Prof. Me. Leonardo Maria</span>
+                        </div>
+                        <div class="mt-5 pt-5 border-t border-slate-200">
+                            <a href="https://www.instagram.com/gpi.oficial.ifto/" target="_blank" rel="noopener noreferrer"
+                                class="bg-brand-50 hover:bg-brand-100 border border-brand-200 text-brand-700 px-4 py-2.5 rounded-lg font-bold transition-colors duration-200 flex items-center justify-center gap-2 text-sm shadow-sm">
+                                <i data-lucide="instagram" class="w-4 h-4 text-brand-600"></i>
+                                <span>Ver fotos do evento</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         P4 / P6: CTA inserido após Programação — pico de interesse
+         ===================================================================== -->
+    <section class="py-16 bg-white border-y border-brand-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-4">Garanta sua presença nos 3 dias</h2>
+            <p class="text-slate-600 mb-2">Evento gratuito • Certificado de 20 horas • 500+ participantes</p>
+            <p class="text-sm text-slate-500 mb-8">Vagas sujeitas à disponibilidade — inscreva-se agora para não ficar de fora.</p>
+            <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-3 bg-act hover:bg-cyan-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg shadow-act/25 transition-all duration-200 hover:-translate-y-0.5">
+                <span>Garantir minha vaga</span>
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+            </a>
+            <p class="text-xs text-slate-400 mt-4 flex items-center justify-center gap-1.5">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                Você será redirecionado para o SUAP/IFTO — menos de 2 minutos.
+            </p>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         PARCEIROS — posicionados antes do CTA final (P6)
+         Marquee original preservado, cursor-pointer removido (P3)
+         ===================================================================== -->
+    <section class="pt-16 pb-0 bg-white overflow-hidden border-t border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <span class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2 block">Apoiado por empresas da região</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-900">Parceiros & Patrocinadores</h2>
+        </div>
+
+        <div class="relative w-full flex overflow-hidden pause-marquee group pt-4 pb-4 md:pb-6">
+            <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+            <div class="flex animate-marquee whitespace-nowrap items-center w-max">
+                <!-- First Set -->
+                <div class="flex items-center justify-center gap-16 sm:gap-32 px-8 sm:px-16 shrink-0">
+                    <img src="./partners/piloto_alimentos.webp" alt="Piloto Alimentos" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/rancheiro.webp" alt="Rancheiro" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sabor_du_queijo.webp" alt="Sabor Duqueijo" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sorvete_melano.png" alt="Sorvete Melano" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/supermecado-lima.png" alt="Supermercado Lima" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/urbano.webp" alt="Urbano" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/Lumina.jpeg" alt="Lumina" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/pai-filho.jpeg" alt="Pai & Filho" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/tiradentes.png" alt="Tiradentes" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/Fera_motos.png" alt="Fera Motos" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sao_jose.png" alt="São José" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                </div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="flex items-center justify-center gap-16 sm:gap-32 px-8 sm:px-16 shrink-0">
+                    <img src="./partners/piloto_alimentos.webp" alt="Piloto Alimentos" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/rancheiro.webp" alt="Rancheiro" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sabor_du_queijo.webp" alt="Sabor Duqueijo" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sorvete_melano.png" alt="Sorvete Melano" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/supermecado-lima.png" alt="Supermercado Lima" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/urbano.webp" alt="Urbano" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/Lumina.jpeg" alt="Lumina" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/pai-filho.jpeg" alt="Pai & Filho" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/tiradentes.png" alt="Tiradentes" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/Fera_motos.png" alt="Fera Motos" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                    <img src="./partners/sao_jose.png" alt="São José" loading="lazy" class="h-24 sm:h-32 w-[120px] sm:w-[160px] object-contain shrink-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         CTA & CONTATO — estrutura original preservada
+         P4: CTA unificado (act, "Garantir minha vaga", target _blank)
+         P10: microcopy de redirecionamento
+         ===================================================================== -->
+    <section id="inscreva-se" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-b border-brand-100 py-16">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-act font-bold tracking-wider uppercase text-sm mb-2 block">Participe</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-6">Não fique de fora do maior evento da área.</h2>
+                    <p class="text-slate-600 mb-2 text-lg">Faça a sua inscrição — é gratuita e leva menos de 2 minutos.</p>
+                    <p class="text-sm text-slate-500 mb-8">Certificado de 20 horas incluso para todos os participantes.</p>
+
+                    <div class="bg-white p-8 rounded-2xl border border-brand-100 shadow-sm relative overflow-hidden group mt-4">
+                        <div class="absolute -right-6 -top-6 w-24 h-24 bg-brand-50 rounded-full group-hover:bg-brand-100 transition-colors duration-500 z-0"></div>
+
+                        <div class="relative z-10 flex flex-col space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-act/10 flex items-center justify-center text-act shrink-0">
+                                    <i data-lucide="ticket" class="w-6 h-6"></i>
+                                </div>
+                                <p class="text-brand-900 font-medium leading-tight">
+                                    O processo de inscrição e credenciamento ocorrerá em nossa plataforma oficial.
+                                </p>
+                            </div>
+
+                            <!-- P4: CTA unificado — act, copy igual, external-link em todos -->
+                            <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+                                class="w-full bg-act hover:bg-cyan-700 text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3">
+                                <span>Garantir minha vaga</span>
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+
+                            <!-- P10: microcopy de reassurance -->
+                            <p class="text-xs text-slate-400 flex items-center gap-1.5 -mt-2">
+                                <i data-lucide="info" class="w-3.5 h-3.5 shrink-0"></i>
+                                Você será redirecionado para o SUAP/IFTO — leva menos de 2 minutos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contato — estrutura original preservada -->
+                <div class="bg-brand-50 p-8 md:p-12 rounded-2xl border border-brand-100" id="contato">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-8">Informações de Contato</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-600 shrink-0 shadow-sm">
+                                <i data-lucide="help-circle" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-900 text-lg mb-1">Coordenação do Evento</h4>
+                                <p class="text-slate-600 mb-2">Dúvidas sobre o evento, submissão de banners ou cotas de patrocínio.</p>
+                                <p class="font-medium text-brand-800">Deusine Cristianne Borges Aguiar Mendes</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-center pl-16">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-500"></i>
+                            <a href="mailto:gpi.araguaina@ifto.edu.br"
+                                class="text-brand-600 hover:text-brand-800 font-medium transition-colors">gpi.araguaina@ifto.edu.br</a>
+                        </div>
+
+                        <div class="flex gap-4 items-center pl-16">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-500"></i>
+                            <a href="tel:+556334110316"
+                                class="text-brand-600 hover:text-brand-800 font-medium transition-colors">(63) 3411-0316</a>
+                        </div>
+
+                        <div class="flex gap-4 items-center pl-16 pt-4 border-t border-brand-200">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-500"></i>
+                            <span class="text-slate-600">IFTO — Campus Araguaína / Av. Amazonas, esq. Av. Paraguai - Cimba</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         FOOTER — estrutura original preservada
+         P3: LabSIS mantido porém sem destaque excessivo
+         ===================================================================== -->
+    <footer class="relative bg-brand-950 text-brand-100 border-t-8 border-brand-600 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+                <div class="md:col-span-12 lg:col-span-5 lg:pr-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo_footer.webp" alt="GETEC IFTO 2026" loading="lazy"
+                            class="h-12 w-auto object-contain drop-shadow-md opacity-90 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <p class="text-brand-100/70 text-sm leading-relaxed mb-6">Promovendo a transformação do ecossistema industrial através da Economia Circular e Objetivos de Desenvolvimento Sustentável.</p>
+                    <div class="flex flex-col gap-4">
+                        <a href="https://www.instagram.com/gpi.oficial.ifto/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex justify-center items-center gap-3 w-full px-5 py-3 rounded-xl bg-brand-900/80 hover:bg-brand-600 border border-brand-700 hover:border-brand-400 transition-all duration-300 group shadow-sm"
+                            aria-label="Siga-nos no Instagram">
+                            <svg class="w-5 h-5 text-white transition-transform duration-300 group-hover:scale-110"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span class="text-sm font-bold text-white tracking-wide">Siga @gpi.oficial.ifto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 lg:col-span-3">
+                    <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Links Úteis</h4>
+                    <ul class="space-y-3 font-medium text-brand-100/80">
+                        <li><a href="#sobre"       class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i> Sobre o Evento</a></li>
+                        <li><a href="#programacao" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i> Programação Oficial</a></li>
+                        <li><a href="#publico"     class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i> Público-alvo</a></li>
+                        <li><a href="#contato"     class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i> Contato e Dúvidas</a></li>
+                    </ul>
+                </div>
+
+                <!-- P3: bloco LabSIS mantido mas com tamanho proporcional ao footer -->
+                <div class="md:col-span-7 lg:col-span-4 w-full">
+                    <h4 class="font-bold uppercase tracking-wider text-sm mb-6 text-brand-300">Desenvolvido por</h4>
+                    <a href="https://labsis.dev.br/" target="_blank" rel="noopener noreferrer"
+                        class="block w-full overflow-hidden rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-brand-300/40 transition-all duration-300 group min-h-[120px]"
+                        style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(16,185,129,0.08) 100%);">
+                        <div class="flex items-center gap-3 sm:gap-4 h-full">
+                            <div class="bg-white rounded-xl p-2 sm:p-3 shadow-md group-hover:shadow-lg transition-shadow flex-shrink-0">
+                                <img src="LabSIS_logo.svg" alt="LabSIS — Laboratório de Sistemas Inovadores" loading="lazy"
+                                    class="h-10 sm:h-12 w-auto max-w-[40px] sm:max-w-none">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-white/90 text-base font-bold group-hover:text-white transition-colors mb-1 truncate">LabSIS</p>
+                                <p class="text-white/50 text-[11px] sm:text-sm leading-snug sm:leading-relaxed group-hover:text-white/70 transition-colors break-words line-clamp-2 sm:line-clamp-none">Laboratório de Sistemas Inovadores</p>
+                            </div>
+                            <svg class="w-5 h-5 text-white/30 group-hover:text-brand-300 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-100/50">
+                <p>&copy; 2026 GETEC. Curso de Gestão da Produção Industrial - IFTO. Todos os direitos reservados.</p>
+            </div>
+        </div>
+
+        <!-- Bottom ODS Bar — mantido para fechar identidade visual -->
+        <div class="ods-bar opacity-50 absolute bottom-0 left-0 w-full" style="height:4px;">
+            <div class="ods-color ods-1"></div><div class="ods-color ods-2"></div>
+            <div class="ods-color ods-3"></div><div class="ods-color ods-4"></div>
+            <div class="ods-color ods-5"></div><div class="ods-color ods-6"></div>
+            <div class="ods-color ods-7"></div><div class="ods-color ods-8"></div>
+            <div class="ods-color ods-9"></div><div class="ods-color ods-10"></div>
+            <div class="ods-color ods-11"></div><div class="ods-color ods-12"></div>
+            <div class="ods-color ods-13"></div><div class="ods-color ods-14"></div>
+            <div class="ods-color ods-15"></div><div class="ods-color ods-16"></div>
+            <div class="ods-color ods-17"></div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         CTA STICKY MOBILE — P4 + P7
+         ===================================================================== -->
+    <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-gray-200 shadow-2xl p-3" id="mobile-cta-bar">
+        <a href="https://suap.ifto.edu.br/eventos/inscricao/1/1529/" target="_blank" rel="noopener noreferrer"
+            class="w-full bg-act hover:bg-cyan-700 text-white py-3 px-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95">
+            <span>Garantir minha vaga</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Scroll-spy — P10 / Sprint 3
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('a.nav-link[href^="#"]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.setAttribute('aria-current', 'page');
+                        } else {
+                            link.removeAttribute('aria-current');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+
+        // Countdown — Sprint 3
+        function updateCountdown() {
+            const event = new Date('2026-05-27T08:00:00').getTime();
+            const diff = event - Date.now();
+            const el = document.getElementById('countdown-days');
+            if (!el) return;
+            if (diff <= 0) { el.textContent = '0'; return; }
+            el.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+
+</html>

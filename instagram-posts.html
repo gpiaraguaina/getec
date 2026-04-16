@@ -54,6 +54,8 @@
             gap: 40px;
             overflow-x: auto; /* Allows scrolling horizontally if viewing all at once */
             font-family: 'Atkinson Hyperlegible', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
         .ig-post {
@@ -98,6 +100,34 @@
             background-color: #ecfdf5;
             background-image: radial-gradient(#34d399 2px, transparent 2px);
             background-size: 48px 48px;
+        }
+
+        /* Print Settings for A4 */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 15mm;
+            }
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                display: block !important;
+            }
+            * {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .ig-post {
+                box-shadow: none !important;
+                margin: 0 auto !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            .ig-post:last-of-type {
+                page-break-after: auto !important;
+                break-after: auto !important;
+            }
         }
     </style>
 </head>
